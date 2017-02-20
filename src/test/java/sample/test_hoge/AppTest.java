@@ -17,6 +17,7 @@ public class AppTest extends TestCase {
         System.setProperty("webdriver.chrome.driver", "C:/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
         String baseUrl = "https://www.google.co.jp/";
+        driver.get(baseUrl);
     }
 
     @Test
