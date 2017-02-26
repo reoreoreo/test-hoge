@@ -23,7 +23,7 @@ public class AppTest extends TestCase {
 //        driver.get(baseUrl);
 
         DesiredCapabilities chrome = DesiredCapabilities.chrome();
-        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chrome);
+        driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chrome);
         driver.get("https://www.google.co.jp/");
         driver.quit();
     }
