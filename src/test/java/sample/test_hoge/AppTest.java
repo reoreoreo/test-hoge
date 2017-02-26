@@ -1,10 +1,13 @@
 package sample.test_hoge;
 
+import java.net.URL;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import junit.framework.TestCase;
 
@@ -15,9 +18,14 @@ public class AppTest extends TestCase {
     @Before
     public void setUp() throws Exception {
         System.setProperty("webdriver.chrome.driver", "C:/chromedriver_win32/chromedriver.exe");
-        driver = new ChromeDriver();
-        String baseUrl = "https://www.google.co.jp/";
-        driver.get(baseUrl);
+//        driver = new ChromeDriver();
+//        String baseUrl = "https://www.google.co.jp/";
+//        driver.get(baseUrl);
+
+        DesiredCapabilities chrome = DesiredCapabilities.chrome();
+        WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), chrome);
+        driver.get("https://www.google.co.jp/");
+        driver.quit();
     }
 
     @Test
