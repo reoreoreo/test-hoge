@@ -94,10 +94,10 @@ public class SeleniumTestStepDefs {
         for(int i = 0; i < sampleFromEntityList.size(); i++){
             int row_num = i+2;
             SampleFromEntity sampleFromEntity = sampleFromEntityList.get(i);
-            assertEquals(sampleFromEntity.get氏名(), driver.findElement(By.xpath("//tr["+ row_num +"]/td[1]")).getText());
-            assertEquals(sampleFromEntity.get生年月日(), driver.findElement(By.xpath("//tr["+ row_num +"]/td[2]")).getText());
-            assertEquals(sampleFromEntity.get性別(), driver.findElement(By.xpath("//tr["+ row_num +"]/td[3]")).getText());
-            assertEquals(sampleFromEntity.get希望日(), driver.findElement(By.xpath("//tr["+ row_num +"]/td[4]")).getText());
+            assertEquals(driver.findElement(By.xpath("//tr["+ row_num +"]/td[1]")).getText(), sampleFromEntity.get氏名());
+            assertEquals(driver.findElement(By.xpath("//tr["+ row_num +"]/td[2]")).getText(), sampleFromEntity.get生年月日());
+            assertEquals(driver.findElement(By.xpath("//tr["+ row_num +"]/td[3]")).getText(), sampleFromEntity.get性別());
+            assertEquals(driver.findElement(By.xpath("//tr["+ row_num +"]/td[4]")).getText(), sampleFromEntity.get希望日());
         }
     }
 
